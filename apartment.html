@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandy and Leslie's Apartment</title>
+  <link rel="stylesheet" href="apartment_layout.css" />
+</head>
+
+<body>
+  <header class="navbar fade-slide">
+    <h1>Sandy & Leslie's Apartment</h1>
+    <p>Click on a room to explore details</p>
+  </header>
+
+  <section class="floorplan fade-slide">
+    <img src="images/apartmentfloorplan.jpg" alt="Apartment Floor Plan" usemap="#floor-map" />
+    <map name="floor-map">
+      <area shape="rect" coords="45,9,195,160" href="bedroom.html" alt="Bedroom 1" />
+      <area shape="poly" coords="201,9,196,156,244,155,245,140,319,136,320,61,344,56,340,11" href="bedroom.html" alt="Bedroom 2" />
+      <area shape="circle" coords="410,132,45" href="diningroom.html" alt="Dining Room" />
+      <area shape="rect" coords="536,364,411,175" href="livingroom.html" alt="Living Room" />
+      <area shape="rect" coords="256,216,401,386" href="kitchen.html" alt="Kitchen" />
+    </map>
+  </section>
+
+  <nav class="room-nav fade-slide">
+    <a href="apartment.html">Apartment</a>
+    <a href="bedroom.html">Bedroom 1</a>
+    <a href="bedroom.html">Bedroom 2</a>
+    <a href="diningroom.html">Dining Room</a>
+    <a href="livingroom.html">Living Room</a>
+    <a href="kitchen.html">Kitchen</a>
+  </nav>
+
+  <main class="content">
+    <section class="welcome fade-slide">
+      <h2>Welcome Message</h2>
+      <audio controls>
+        <source src="audio/apartment.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+      <p>
+        Welcome to our apartment! You’ll love living here — spacious rooms,
+        modern amenities, and a great community atmosphere.
+      </p>
+
+      <div class="survey">
+        <h3>Quick Survey</h3>
+        <p>How did you find out about this apartment?</p>
+        <form>
+          <label><input type="radio" name="source" value="web" /> Web Search</label>
+          <label><input type="radio" name="source" value="friend" /> Friend</label>
+          <label><input type="radio" name="source" value="news" /> Newspaper</label>
+          <div class="form-buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="services fade-slide">
+      <h2>Apartment Services</h2>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Days / Hours</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gym</td><td rowspan="2">Mon–Fri 6am–10pm, Sat 8am–8pm, Sun 8am–5pm</td></tr>
+          <tr><td>Pool</td></tr>
+          <tr><td>Laundry</td><td>24/7</td></tr>
+        </tbody>
+      </table>
+      <p class="note">⚠️ Please don’t let strangers use these facilities.</p>
+    </section>
+
+    <section class="location fade-slide">
+      <h2>Location</h2>
+      <img src="images/location.png" alt="Apartment Location Map" />
+    </section>
+  </main>
+
+  <section class="gallery fade-slide">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <figure><img src="thumbnails/balcony_sm.jpg" alt="Balcony"><figcaption>Balcony</figcaption></figure>
+      <figure><img src="thumbnails/bathroom_sm.jpg" alt="Bathroom"><figcaption>Bathroom</figcaption></figure>
+      <a href="bedroom.html"><figure><img src="thumbnails/bedroom_sm.jpg" alt="Bedroom"><figcaption>Bedroom</figcaption></figure></a>
+      <figure><img src="thumbnails/diningroom_sm.jpg" alt="Dining"><figcaption>Dining Room</figcaption></figure>
+      <figure><img src="thumbnails/kitchen_sm.jpg" alt="Kitchen"><figcaption>Kitchen</figcaption></figure>
+      <figure><img src="thumbnails/livingroom_sm.jpg" alt="Living"><figcaption>Living Room</figcaption></figure>
+    </div>
+  </section>
+
+  <footer class="fade-slide">
+    <p>Contact us: <a href="mailto:bidhyanshu.poudel@mohawkcollege.ca">apartment@example.com</a> |
+      <a href="tel:9055551234">(905) 555-1234</a></p>
+    <p>&copy; 2024 Sandy & Leslie Apartments</p>
+  </footer>
+
+  <script>
+    // Animate sections when they come into view
+    const faders = document.querySelectorAll('.fade-slide');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>

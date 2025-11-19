@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kitchen | Sandy and Leslie's Apartment</title>
+  <link rel="stylesheet" href="apartment_layout.css" />
+</head>
+
+<body>
+  <header class="navbar fade-slide">
+    <h1>Kitchen Details</h1>
+    <p>Explore the modern and fully equipped kitchen in our apartment</p>
+  </header>
+
+  <section class="floorplan fade-slide">
+    <img src="images/apartmentfloorplan.jpg" alt="Apartment Floor Plan" usemap="#image-map" />
+    <map name="image-map">
+      <area shape="rect" coords="45,9,195,160" href="bedroom.html" alt="Bedroom 1" />
+      <area shape="poly" coords="201,9,196,156,244,155,245,140,319,136,320,61,344,56,340,11" href="bedroom.html" alt="Bedroom 2" />
+      <area shape="circle" coords="410,132,45" href="diningroom.html" alt="Dining Room" />
+      <area shape="rect" coords="536,364,411,175" href="livingroom.html" alt="Living Room" />
+      <area shape="rect" coords="256,216,401,386" href="kitchen.html" alt="Kitchen" />
+    </map>
+  </section>
+
+  <nav class="room-nav fade-slide">
+    <a href="apartment.html">Apartment</a>
+    <a href="bedroom.html">Bedroom</a>
+    <a href="diningroom.html">Dining Room</a>
+    <a href="livingroom.html">Living Room</a>
+    <a href="kitchen.html" class="active">Kitchen</a>
+  </nav>
+
+  <main class="content fade-slide">
+    <section class="kitchen-info">
+      <h2>About the Kitchen</h2>
+      <img src="images/kitchen_lg.jpg" alt="Kitchen Interior" class="feature-img" />
+      <p>
+        The kitchen in Sandy & Leslie’s apartment is designed for both convenience and 
+        style. Featuring modern appliances, spacious countertops, and warm lighting, 
+        it provides the perfect environment for cooking, meal prep, and enjoying 
+        delicious food with family and friends.
+      </p>
+    </section>
+
+    <section class="services">
+      <h2>Apartment Services</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Day / Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gym</td>
+            <td rowspan="2">Mon–Fri 6am–10pm, Sat 8am–8pm, Sun 8am–5pm</td>
+          </tr>
+          <tr><td>Pool</td></tr>
+          <tr><td>Laundry</td><td>24/7</td></tr>
+        </tbody>
+      </table>
+
+      <p class="note">⚠️ Please do not allow unknown guests to use these facilities.</p>
+    </section>
+  </main>
+
+  <footer class="fade-slide">
+    <p>
+      For more information contact:
+      <a href="mailto:apartment@example.com">apartment@example.com</a>
+      or <a href="tel:9055551234">(905) 555-1234</a>
+    </p>
+    <p>&copy; Sandy and Leslie 2024</p>
+  </footer>
+
+  <script>
+    // Fade-slide scroll animation
+    const faders = document.querySelectorAll('.fade-slide');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>

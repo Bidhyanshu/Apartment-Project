@@ -1,0 +1,198 @@
+/* Modern, clean, mobile-responsive design */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #eaecef;
+  margin-bottom: 10px;
+}
+
+/* Navbar */
+.navbar {
+  text-align: center;
+  background: #1a4b8b;
+  color: #fff;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.navbar p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Navigation links */
+.room-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  background: #e8eef6;
+  padding: 1rem;
+}
+.room-nav a {
+  text-decoration: none;
+  color: #1a4b8b;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.room-nav a:hover {
+  background: #1a4b8b;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Floorplan */
+.floorplan {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.floorplan img {
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.floorplan img:hover {
+  transform: scale(1.02);
+}
+
+/* Main Content Layout */
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Sections */
+section {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+section:hover {
+  transform: translateY(-4px);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+th, td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  background: #1a4b8b;
+  color: #fff;
+}
+.note {
+  color: #d9534f;
+  margin-top: 0.8rem;
+  font-weight: bold;
+}
+
+/* Gallery */
+.gallery {
+  padding: 2rem;
+  text-align: center;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+figcaption {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: #1a4b8b;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  margin-top: 2rem;
+}
+
+/* Fade-slide animation */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 1.6rem; }
+  .room-nav a { font-size: 0.9rem; }
+}
+/* Active navigation link */
+.room-nav a.active {
+  background: #1a4b8b;
+  color: #fff;
+}
+
+/* Bedroom Image Styling */
+.feature-img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  display: block;
+  margin: 1rem auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+}
+.feature-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Section text */
+.bedroom-info p {
+  text-align: justify;
+  font-size: 1.05rem;
+  margin-top: 1rem;
+}
+
+/* Smooth fade-slide effect */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

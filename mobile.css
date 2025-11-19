@@ -1,0 +1,12 @@
+@media only screen and (max-width: 600px){
+    .mainplan{
+        display: none;
+    }
+    .nav a{
+        display: block;
+        border: 0px solid;
+    }
+    main{
+        grid-template-columns: repeat(auto-fit, 100%);
+    }
+}
